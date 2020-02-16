@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Tagger - From FCPython.com</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <div id="maincontainer">
+    <p id="topnav">Event Tagger from <a href="https://www.fcpython.com">FC Python<img id="logo" height="20" src="img/fcplogo.png"></a></p>
+  
+    <div id="pitchcontainer">
+      <div id="linecontainer">
+        <div class="top-box line"></div>
+        <div class="centre-circle line"></div>
+        <div class="centre-line line"></div>
+        <div class="bottom-box line"></div>
+      </div>
+      <div id="pitch" class="line" onclick="addevent(event)"></div>
+    </div>
+  
+    <div id="datacontainer">
+      <div id="resultscontainer">
+        <table id="resultstable">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>X</th>
+              <th>Y</th>
+            </tr>
+          </thead>
+          <tbody id="resultsdata"></tbody>
+        </table>
+      </div>
+  
+      <div id="eventscontainer">
+        <p
+          class="event"
+          id="selected"
+          onclick="changeEventFocus(this)"
+          contenteditable="false"
+        >
+          Shot
+        </p>
+        <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+          Pass
+        </p>
+        <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+          Tackle
+        </p>
+        <p class="event" onclick="changeEventFocus(this)" contenteditable="false">
+          Foul
+        </p>
+        <h4 onclick="eventsEditable()"><span id="editON">ON|</span>Edit<span id="editOFF">|OFF</span></h4>
+
+        <p id="buttonContainer">
+          <button id="export" onclick="exportTableToCSV('events.csv')">
+            Export CSV
+          </button>
+          <button id="delLast" onclick="delLast()">
+            Delete last
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+ 
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-x-y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  
+</body>
+
+</html>
